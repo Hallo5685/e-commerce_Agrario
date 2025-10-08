@@ -1,0 +1,3 @@
+﻿ANALISI TECNICA
+In mancanza di informazioni riguardo al come creare il sito, se usando HTML, CSS, JavaScript ecc… o wordpress l’analisi funzionale prodotta potrebbe non essere adeguata per tanto non è presente su GitHub o su questo drive ma solo come file locale.
+Tutto dipende da dove verrà posizionato il sito, se inserito come “costola” dei siti scolastici allora ci adatteremo alla loro struttura; se indipendente da essi useremo HTML ecc…

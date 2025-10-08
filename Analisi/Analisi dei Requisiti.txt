@@ -1,0 +1,21 @@
+﻿ANALISI dei REQUISITI
+
+
+* Sviluppare un sito web (lato frontend e backend) che permetta la vendita di fiori e prodotti  alimentari di stagione online.
+* Si deve poter vedere il catalogo dei prodotti e poterli prenotare (o al pezzo o al kg).
+Ogni prodotto può essere selezionato per vederne le caratteristiche e sapere in che quantità è presente.[a]
+* Ogni volta che viene aggiunto un nuovo prodotto viene messo ai primi posti del catalogo con la scritta “nuovi arrivi”[b].
+* Si può visualizzare tutto il sito come ospiti ma nel momento della prenotazione di un qualsiasi prodotto in qualsiasi quantità bisogna creare/accedere al proprio account.
+Per ogni account è presente un carrello
+* Non sono possibili (per ora) le spedizioni dei prodotti, quindi pagamento e ritiro dell’ordine sono gestiti da un’operatore e il cliente stesso deve recarsi alla sede dell’agrario.
+* Deve essere gestito un account amministratore che permette di caricare i prodotti con relative informazioni 
+* Gli ordini una volta inviati verranno mandati automaticamente via mail all’agrario o a chi gestisce tutto quello che riguarda la vendita dei prodotti
+* (La gestione delle recensioni è da vedere)
+
+
+[a]Decidere se mettere flag Presente/non oppure numero disponibili
+[b]Da decidere quanto dura lo status di "nuovo arrivo" 
+
+
+- Lo status dipende dalla scadenza di un prodotto o è standard per tutti?
+(vedere scadenza prodotti quando vengono inseriti nelle vendite)
