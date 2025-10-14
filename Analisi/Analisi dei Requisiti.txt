@@ -1,21 +1,127 @@
-﻿ANALISI dei REQUISITI
+﻿ANALISI dei REQUISITI         
 
 
+GESTIONE GENERALE 
 * Sviluppare un sito web (lato frontend e backend) che permetta la vendita di fiori e prodotti  alimentari di stagione online.
 * Si deve poter vedere il catalogo dei prodotti e poterli prenotare (o al pezzo o al kg).
-Ogni prodotto può essere selezionato per vederne le caratteristiche e sapere in che quantità è presente.[a]
-* Ogni volta che viene aggiunto un nuovo prodotto viene messo ai primi posti del catalogo con la scritta “nuovi arrivi”[b].
+Ogni prodotto può essere selezionato per vederne le caratteristiche e sapere in che quantità è presente.
+* Ogni volta che viene aggiunto un nuovo prodotto viene messo ai primi posti del catalogo con la scritta “nuovi arrivi”.
 * Si può visualizzare tutto il sito come ospiti ma nel momento della prenotazione di un qualsiasi prodotto in qualsiasi quantità bisogna creare/accedere al proprio account.
 Per ogni account è presente un carrello
 * Non sono possibili (per ora) le spedizioni dei prodotti, quindi pagamento e ritiro dell’ordine sono gestiti da un’operatore e il cliente stesso deve recarsi alla sede dell’agrario.
 * Deve essere gestito un account amministratore che permette di caricare i prodotti con relative informazioni 
-* Gli ordini una volta inviati verranno mandati automaticamente via mail all’agrario o a chi gestisce tutto quello che riguarda la vendita dei prodotti
 * (La gestione delle recensioni è da vedere)
+* Il design del sito va fatto rispettando gli standard dei siti scolastici (quindi abbiamo già il modello da seguire)
 
 
-[a]Decidere se mettere flag Presente/non oppure numero disponibili
-[b]Da decidere quanto dura lo status di "nuovo arrivo" 
 
 
-- Lo status dipende dalla scadenza di un prodotto o è standard per tutti?
-(vedere scadenza prodotti quando vengono inseriti nelle vendite)
+
+
+GESTIONE UTENTE
+   * Registrazione
+   * Login
+   * Pagina del profilo con i dati utente (eventualmente modificabili)
+   * Storico degli ordini
+   * Recupero delle pw
+   * Possibilità di acquistare prodotti
+
+
+GESTIONE AMMINISTRATORE (super utente)
+   * Inserimento/modifica/rimozione prodotto dal catalogo
+   * Inserimento/modifica/eliminazione account 
+   * Gestione categorie di prodotti e offerte
+   * Gestione ordini (non so bene come)
+   * Gestione storico ordini
+   * diviso per pagati e non
+   * ricerca per mail di un ordine specifico.
+   * Creazione degli altri utenti di tipologia collaboratore
+   1. Può modificare le caratteristiche degli account collaboratore rendendoli in grado di aggiungere prodotti al catalogo, aumentarne la quantità e gestire le vendite. (in futuro, forse, anche il costumer service)
+
+
+
+
+GESTIONE COLLABORATORE
+
+
+   * (Le sue capacità operative dipendono dal ruolo che gli ha affidato l’amministratore)
+   * Gestione categorie di prodotti e offerte
+   * Gestione ordini (non so bene come)
+   * Gestione storico ordini
+   * diviso per pagati e non
+   * ricerca per mail di un ordine specifico.
+   * Inserimento/modifica/rimozione prodotto dal catalogo
+
+
+GESTIONE CARRELLO 
+   * Gestione dei prodotti inseriti (eliminazione, modifica quantità)
+   * Calcolo del prezzo totale
+   * (salvataggio ogni 2-3 min su DB tramite SQL)
+
+
+GESTIONE CONFERMA PRENOTAZIONE
+   * Gestione data di ritiro/prenotazione
+   * Gestione inserimento dati utente (nome cognome e mail) 
+   * Gestione invio mail:
+   * di conferma dell’ordine all’utente
+   * con i dati dell’ordine all’amministratore
+
+
+GESTIONE PRODOTTI 
+   * Disponibilità dei prodotti
+   * Pagine con informazioni specifiche 
+   * Gestione offerte e nuovi arrivi dei prodotti
+   * Gestione sezioni dei prodotti (es. miele, verdure, fiori, frutta, …)
+   * Ricerca prodotti sia tramite filtri che tramite nome del prodotto
+
+
+________________
+
+
+Domande x Agrario 
+
+
+   * Gestione della sezione dei prodotti:
+   * Pagina con tutti i prodotti e suddivisione in categorie a parte
+   * Pagina con categorie su cui navigare (mettere a disposizione anche la pagina ‘tutti’)
+   * Tra le categorie considerare anche offerte e novità
+   * Prodotti esauriti (da decidere noi)
+   * segnalazione ma si continua a visualizzare la pagina con i dettagli (si blocca solo il tasto della prenotazione
+   * si blocca anche la visualizzazione della descrizione del prodotto
+   * Come gestiamo gli ultimi articoli disponibili 
+   * se uno ha gli ultimi pezzi nel carrello, si possono comunque comprare e il primo che prenota ‘vince’?
+   * Disconnessione account con carrello pieno
+   * carrello perso
+   * salvataggio degli articoli
+   * Prenotazione (da decidere noi)
+   * l’ultima prenotazione di può disdire?
+   * Tempo di disdetta
+   * Pagamento e ritiro avvenuti
+   * l’account amministratore/collaboratore contrassegna i pagamenti sugli ordini
+   * Quantità prodotto
+   * contatore con quantità
+   * flag disponibile/non
+   * Prodotti stagionali
+   * un solo restock
+   * più di uno nella stagione
+
+
+
+
+
+
+   * Quantità DA CHIEDERE
+   * c’è una quantità massima di prodotti acquistabili?
+
+
+   * Ritiro prodotti DA CHIEDERE
+   * Tempo Limite 
+   * optare per inserire una data di ritiro
+   * data precisa
+   * range di max 3 giorni in cui si andranno a ritirare i prodotti 
+   * Nuovo arrivo DA CHIEDERE
+   * dipende dalla scadenza 
+   * ci sono un tot di giorni predefiniti in cui può stare nei nuovi arrivi (uguale per tutti)
+   * Metodi di pagamento e ritiro merci: DA CHIEDERE
+   1. Ritiro e pagamento fisico all’agrario (o all’indirizzo specificato)
+   2. Pagamento anche o solo online, e poi si ritira l’ordine all’agrario (o all’indirizzo specificato).
