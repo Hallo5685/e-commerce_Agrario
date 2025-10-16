@@ -35,7 +35,6 @@ Può eliminare gli account collaboratore in qualsiasi momento
 
 
 GESTIONE COLLABORATORE
-
 Le sue capacità operative dipendono dal ruolo che gli ha affidato l’amministratore
 Gestione categorie di prodotti e offerte
 Gestione ordini (non si sa ancora come con precisione)
@@ -98,4 +97,5 @@ Ritiro e pagamento fisico all’agrario (o all’indirizzo specificato)
 Pagamento anche o solo online, e poi si ritira l’ordine all’agrario (o all’indirizzo specificato)
 Optare per la gestione del supporto clienti (che eventualmente diventerebbe anche una delle mansioni dei collaboratori)
      
+
 
