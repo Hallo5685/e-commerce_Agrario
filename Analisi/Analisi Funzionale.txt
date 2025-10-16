@@ -41,12 +41,14 @@ COLLABORATORE
 ANALISI FUNZIONALE
 1. Scopo del Progetto
 Realizzare un sito web (frontend + backend) per la prenotazione e vendita online di prodotti agricoli e floreali stagionali dell’Istituto Tecnico Agrario del Veneto. Il sito consente la consultazione del catalogo, la prenotazione dei prodotti e il ritiro in sede. Non sono previste spedizioni. Il sistema è pensato anche come strumento didattico e operativo per studenti e collaboratori dell’istituto.
+
 2. Tipi Account
 * Visitatore (Ospite): può navigare il sito e visualizzare il catalogo. Deve registrarsi per prenotare.
 * Cliente Registrato: può creare un account, gestire il carrello e inviare ordini. Ha accesso allo storico.
 * Amministratore (Admin): super utente con accesso completo: gestione prodotti, ordini, collaboratori, categorie.
 * Collaboratore: account creato dall’admin con permessi specifici: gestione prodotti, ordini, pagamenti.
 * Operatore Agrario: riceve gli ordini via email e gestisce fisicamente il ritiro e il pagamento in sede.
+
 3. Requisiti Funzionali
  Catalogo Prodotti
 * Visualizzazione a griglia/lista con ordinamento per: nuovi arrivi (default), prezzo, nome, disponibilità.
@@ -90,20 +92,25 @@ Comunicazioni
 * Pagina contatti con mappa, orari, telefono, email.
 Recensioni (Opzionale)
 * Placeholder in UI e database, disattivato in produzione finché non definito il regolamento.
+
 5. Funzioni Aggiuntive
 * Prenotazione disponibile solo con account registrato
 * “Nuovi arrivi” visibili per N giorni o finché l’admin rimuove il flag
 * Ogni prodotto è venduto al pezzo o al kg (non entrambi)
 * Pagamento solo in sede 
 * Invio ordine genera due email: cliente + agrario
+
 6. Flusso di Checkout
 Carrello → Login/Registrazione → Riepilogo → Conferma → Email inviate → Istruzioni ritiro in sede
+
 7. Metriche Minime
 * Tempo medio di caricamento catalogo
 * Tasso di completamento ordini
 * Prodotti più prenotati per categoria/stagione
+
 8. Evoluzioni Future
 * Attivazione recensioni con moderazione
 * Pagamenti online
 * Prenotazione fascia oraria ritiro
+
 * Reportistica avanzata per produzione e stagionalità
