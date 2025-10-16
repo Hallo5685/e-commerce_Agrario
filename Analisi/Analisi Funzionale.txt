@@ -1,114 +1,109 @@
 ﻿ANALISI FUNZIONALE
-1) Scopo del progetto
-Realizzare un sito web (frontend + backend) per vendita/prenotazione online di fiori e prodotti alimentari di stagione dell’istituto agrario. L’utente può consultare il catalogo, selezionare i prodotti (al pezzo o al kg) e prenotarli. Il pagamento e il ritiro avvengono in sede: non sono previste spedizioni.
+UTENTE 
+* Home Page
+* Registrazione e Log in
+* Prodotti
+* Dettagli Prodotto
+* Carrello 
+* Pagina conferma prenotazione
+* Area Personale (Storico + Dati)
 
-2) Attori e ruoli
-* Visitatore (Ospite): naviga tutto il sito senza login; al momento della prenotazione deve registrarsi o accedere.
-* Cliente registrato: possiede account e carrello personale, può creare e inviare ordini.
-* Amministratore (Admin): gestisce catalogo prodotti (crea, modifica, aggiorna quantità, marca “nuovi arrivi”), vede lista ordini.
-* Operatore agrario: riceve gli ordini per email e gestisce fisicamente pagamento e ritiro in sede.
 
-3) Requisiti Funzionali (RF)
-RF1 – Catalogo prodotti
-* Visualizzazione a griglia/lista con ordinamento: per nuovi arrivi (default), per prezzo, per nome, per disponibilità.
-* Filtro per categorie (es. Fiori, Frutta, Verdura, Erbe), stagione, disponibilità.
-* Evidenza “Nuovi arrivi”: i prodotti appena inseriti compaiono in cima con badge dedicato.
-(Dopo un certo tempo il flag “Nuovi arrivi” verrà disattivato).
-RF2 – Scheda prodotto
-   * Nome, foto, descrizione breve, unità di vendita (pezzo o kg), prezzo (€/pezzo, €/kg), disponibilità residua.
-   * Campo quantità con controllo stock (non si può superare la quantità disponibile).
-   * Pulsante “Aggiungi al carrello”.
-RF3 – Prenotazione e carrello
-   * Il carrello è sempre visibile/consultabile (mini‑carrello + pagina dedicata).
-   * Per inviare l’ordine è obbligatoria registrazione/login (se ospite, scatta il redirect al login/registrazione).
-   * Riepilogo carrello: elenco prodotti, quantità, unità (pezzo/kg), subtotali e totale.
-   * Possibilità di modificare quantità o rimuovere linee.
-RF4 – Account utente
-   * Registrazione (email + password) e login.
-   * Profilo: dati base (nome, cognome, telefono, eventuali note per ritiro).
-   * //Storico ordini con stato (Inviato / Preso in carico / Pronto al ritiro / Ritirato / Annullato).
-RF5 – Invio ordine
-   * Conferma definitiva con riepilogo.
-   * Email automatica all’agrario/gestore vendite con dettaglio ordine; email di conferma anche al cliente.
-   * Messaggio informativo: pagamento e ritiro solo in sede (indirizzo, orari, eventuale numero di sportello).
-RF6 – Gestione disponibilità e stock
-   * Ogni prodotto ha una quantità disponibile aggiornata dall’admin (o automaticamente, da discutere).
-   * In fase di aggiunta al carrello e di conferma ordine, validazione stock. Se insufficiente, messaggio chiaro e proposta quantità massima.
-RF7 – Backoffice amministratore
-   * CRUD Prodotti: creare/modificare/eliminare prodotti con: nome, descrizione, categoria, prezzo, unità (pezzo/kg), quantità disponibile, foto, flag “nuovo arrivo” (impostato automaticamente su nuovi inserimenti; scade dopo N giorni o quando l’admin lo toglie).
-   * Gestione ordini: elenco con filtri per stato e data; possibilità di cambiare stato (Preso in carico → Pronto al ritiro → Ritirato / Annullato). Invio email automatiche al cambio stato (opzionale).
-   * Gestione categorie e stagionalità (per filtri in catalogo).
-RF8 – Comunicazioni
-   * Email: conferma ordine al cliente + notifica all’agrario.
-   * Contatti: pagina con info sede (mappa, orari, telefono, mail).
-RF9 – (Opzionale / da definire) Recensioni
-   * La gestione delle recensioni è “da vedere”: si predispone solo lo scheletro (tabelle e placeholder in UI) ma non attivo in produzione finché non definito il regolamento.
+AMMINISTRATORE
+* Home Page 
+* Registrazione e Log in
+* Prodotti
+* Dettagli Prodotto
+* Area Personale (Storico + Dati)
+* Modifica dei prodotti
+* Pagina gestione collaboratori
 
-4) Requisiti Non Funzionali (RNF)
-   * Usabilità: interfaccia semplice, (mobile‑first), testo grande, pulsanti chiari.
-   * Affidabilità: salvataggio carrello lato server associato all’account; sessioni stabili.
-   * Sicurezza: password cifrate; protezione aree admin; validazioni lato client e server.
-   * Compatibilità: Chrome, Firefox, Edge, Safari; responsive (smartphone, tablet, desktop).
-   * Privacy/GDPR: informativa privacy, cookie banner essenziale, log degli invii email.
-   * Accessibilità: contrasti adeguati, testi alternativi per immagini dei prodotti.
 
-5) Dati e Modello Informativo (schema logico semplificato)
-   * Utenti(id, nome, cognome, email, password_hash, telefono, ruolo[cliente/admin], created_at)
-   * Prodotti(id, nome, descrizione, categoria_id, unita_vendita[pezzo/kg], prezzo, quantita_disponibile, foto_url, nuovo_arrivo_bool, data_inserimento, stagionalita)
-   * Categorie(id, nome)
-   * Carrelli(id, utente_id, created_at, updated_at)
-   * CarrelloRighe(id, carrello_id, prodotto_id, quantita, prezzo_unitario, unita_vendita)
-   * Ordini(id, utente_id, codice, totale, stato, created_at)
-   * OrdiniRighe(id, ordine_id, prodotto_id, quantita, prezzo_unitario, unita_vendita)
-   * EmailLog(id, ordine_id, tipo[to_agrario/to_cliente], esito, timestamp)
-   * (Opz.) Recensioni(id, prodotto_id, utente_id, voto, testo, stato[bozza/pubblicata], created_at) – disabilitato all’inizio
+COLLABORATORE
+* Home Page 
+* Registrazione e Log in
+* Prodotti
+* Dettagli Prodotto
+* Modifica dei prodotti
+* Area Personale (Storico + Dati)
 
-6) Regole di Business (RB)
-   * RB1: Prenotazione disponibile solo con account (login o registrazione obbligatoria alla checkout).
-   * RB2: Nuovi arrivi: ogni prodotto creato appare in cima al catalogo con badge “Nuovi arrivi” per N giorni (es. 7) o finché l’admin rimuove il flag.
-   * RB3: Unità di vendita: ogni prodotto è o al pezzo o al kg (non entrambi). Il prezzo e i controlli quantità si adattano all’unità.
-   * RB4: Stock: non si possono aggiungere al carrello quantità superiori alla disponibilità; lo scarico avviene alla conferma ordine.
-   * RB5: Pagamenti: non online. Il pagamento avviene in sede al ritiro.
-   * RB6: Notifica ordine: alla conferma ordine partono due email: una al cliente (riepilogo), una all’agrario (dettaglio operativo).
 
-7) Casi d’Uso principali (UML testuale)
-UC1 – Navigazione catalogo (Ospite/Cliente)
-   1. Utente apre Home → vede catalogo con badge Nuovi arrivi in alto.
-   2. Applica filtri/ordinamenti.
-   3. Apre scheda prodotto.
-UC2 – Aggiunta al carrello (Ospite/Cliente)
-   1. Nella scheda prodotto inserisce quantità (pezzo/kg).
-   2. Sistema valida disponibilità e aggiunge al carrello.
-UC3 – Checkout e login obbligatorio (Ospite → Cliente)
-   1. Ospite apre carrello e clicca “Prenota”.
-   2. Sistema mostra login/registrazione.
-   3. Dopo login, torna al checkout con carrello conservato.
-UC4 – Invio ordine (Cliente)
-   1. Cliente conferma riepilogo.
-   2. Sistema crea ordine, imposta stato Inviato, scarica stock e invia email (cliente + agrario).
-   3. Pagina di conferma con codice ordine + istruzioni ritiro.
-UC5 – Gestione prodotti (Admin)
-   1. Admin accede a Backoffice.
-   2. Crea/modifica prodotto con tutti i campi.
-   3. Imposta/vede nuovo arrivo; aggiorna disponibilità.
-UC6 – Gestione ordini (Admin/Operatore)
-   1. Vede lista ordini con filtri.
-   2. Aggiorna stato (Preso in carico → Pronto al ritiro → Ritirato / Annullato).
-   3. (Opz.) Invio email stato al cliente.
 
-8) Flusso di Checkout (riassunto)
-Carrello → Login/Registrazione (se necessario) → Riepilogo → Conferma → Email inviate → Istruzioni ritiro in sede.
 
-9) Vincoli e assunzioni
-   * Nessuna spedizione: solo ritiro in sede.
-   * Foto prodotti fornite dall’agrario; testi brevi e chiari.
-   * Sistema email //con indirizzo dedicato (es. ordini@agrario.it).
-   * Orari di ritiro e indirizzo visibili in più punti (footer, checkout, email).
 
-10) Metriche minime (per capire se funziona)
-   * Tempo medio caricamento catalogo.
 
-11) Evoluzioni future
-   * Recensioni con moderazione (linee guida da definire).
-   * Pagamenti online e prenotazione fascia oraria ritiro.
-   * Reportistica avanzata per produzione e stagionalità.
+
+
+
+
+
+
+ANALISI FUNZIONALE
+1. Scopo del Progetto
+Realizzare un sito web (frontend + backend) per la prenotazione e vendita online di prodotti agricoli e floreali stagionali dell’Istituto Tecnico Agrario del Veneto. Il sito consente la consultazione del catalogo, la prenotazione dei prodotti e il ritiro in sede. Non sono previste spedizioni. Il sistema è pensato anche come strumento didattico e operativo per studenti e collaboratori dell’istituto.
+2. Tipi Account
+* Visitatore (Ospite): può navigare il sito e visualizzare il catalogo. Deve registrarsi per prenotare.
+* Cliente Registrato: può creare un account, gestire il carrello e inviare ordini. Ha accesso allo storico.
+* Amministratore (Admin): super utente con accesso completo: gestione prodotti, ordini, collaboratori, categorie.
+* Collaboratore: account creato dall’admin con permessi specifici: gestione prodotti, ordini, pagamenti.
+* Operatore Agrario: riceve gli ordini via email e gestisce fisicamente il ritiro e il pagamento in sede.
+3. Requisiti Funzionali
+ Catalogo Prodotti
+* Visualizzazione a griglia/lista con ordinamento per: nuovi arrivi (default), prezzo, nome, disponibilità.
+* Filtri per categoria (fiori, frutta, verdura, miele, erbe), stagione, disponibilità.
+* Evidenza “Nuovi arrivi” con badge dedicato (scade dopo N giorni o rimozione manuale).
+Scheda Prodotto
+* Nome, foto, descrizione, unità di vendita (pezzo/kg), prezzo, disponibilità residua.
+* Indicazione se stagionale o in offerta.
+* Pulsante “Aggiungi al carrello” con controllo stock.
+Carrello e Prenotazione
+* Mini-carrello sempre visibile + pagina dedicata.
+* Modifica quantità, rimozione prodotti, calcolo subtotali e totale.
+* Salvataggio automatico lato server ogni 2–3 minuti.
+* Persistenza del carrello in caso di disconnessione.
+* Prenotazione disponibile solo dopo login/registrazione.
+* Blocco prenotazione in caso di quantità insufficiente (chi conferma per primo “vince”).
+Account Utente
+* Registrazione con email, nome, cognome, password.
+* Recupero password via email.
+* Profilo utente con dati personali e note per ritiro.
+* Storico ordini con stato: Inviato, Preso in carico, Pronto al ritiro, Ritirato, Annullato.
+Invio Ordine
+* Riepilogo finale con conferma.
+* Email automatica al cliente e all’operatore agrario.
+* Messaggio informativo su ritiro e pagamento in sede (indirizzo, orari, sportello).
+Gestione Disponibilità
+* Validazione stock in fase di aggiunta al carrello e conferma ordine.
+* Messaggio chiaro in caso di quantità insufficiente e proposta alternativa.
+Area Amministratore
+* CRUD prodotti: nome, descrizione, categoria, prezzo, unità, quantità, foto, flag “nuovo arrivo”.
+* Gestione ordini: filtri per stato/data, modifica stato, invio email automatica (opzionale).
+* Gestione categorie e stagionalità.
+* Creazione/modifica/eliminazione collaboratori con assegnazione privilegi granulari.
+Collaboratore
+* Accesso con credenziali fornite dall’admin.
+* Funzionalità assegnate: gestione prodotti, quantità, categorie, offerte.
+* Visualizzazione/modifica ordini (se autorizzato).
+* Contrassegno pagamento e conferma ritiro.
+Comunicazioni
+* Email conferma ordine al cliente + notifica all’agrario.
+* Pagina contatti con mappa, orari, telefono, email.
+Recensioni (Opzionale)
+* Placeholder in UI e database, disattivato in produzione finché non definito il regolamento.
+5. Funzioni Aggiuntive
+* Prenotazione disponibile solo con account registrato
+* “Nuovi arrivi” visibili per N giorni o finché l’admin rimuove il flag
+* Ogni prodotto è venduto al pezzo o al kg (non entrambi)
+* Pagamento solo in sede 
+* Invio ordine genera due email: cliente + agrario
+6. Flusso di Checkout
+Carrello → Login/Registrazione → Riepilogo → Conferma → Email inviate → Istruzioni ritiro in sede
+7. Metriche Minime
+* Tempo medio di caricamento catalogo
+* Tasso di completamento ordini
+* Prodotti più prenotati per categoria/stagione
+8. Evoluzioni Future
+* Attivazione recensioni con moderazione
+* Pagamenti online
+* Prenotazione fascia oraria ritiro
+* Reportistica avanzata per produzione e stagionalità
