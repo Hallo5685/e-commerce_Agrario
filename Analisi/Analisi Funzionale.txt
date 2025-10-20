@@ -112,5 +112,5 @@ Carrello → Login/Registrazione → Riepilogo → Conferma → Email inviate �
 * Attivazione recensioni con moderazione
 * Pagamenti online
 * Prenotazione fascia oraria ritiro
-
 * Reportistica avanzata per produzione e stagionalità
+
