@@ -102,5 +102,5 @@ Tecnologie: WordPress + Elementor (versione gratuita) + WooCommerce
     * Tutte le personalizzazioni saranno documentate nel child theme
     * Il sito sarà testato su Chrome, Firefox, Edge, Safari
     * Ottimizzazione mobile garantita da Elementor
-    
     * Backup automatici settimanali configurati tramite UpdraftPlus (free)
+
