@@ -1,3 +1,35 @@
+ANALISI FUNZIONALE
+UTENTE 
+Home Page
+Registrazione e Log in
+Prodotti
+Dettagli Prodotto
+Carrello 
+Pagina conferma prenotazione
+Area Personale (Storico + Dati)
+
+AMMINISTRATORE
+Home Page 
+Registrazione e Log in
+Prodotti
+Dettagli Prodotto
+Area Personale (Storico + Dati)
+Modifica dei prodotti
+Pagina gestione collaboratori
+
+COLLABORATORE
+Home Page 
+Registrazione e Log in
+Prodotti
+Dettagli Prodotto
+Modifica dei prodotti
+Area Personale (Storico + Dati)
+
+
+
+
+
+
 1. Scopo del Progetto
 Realizzare un sito web (frontend + backend) per la prenotazione e vendita online di prodotti agricoli e floreali stagionali dell’Istituto Tecnico Agrario del Veneto. Il sito consente la consultazione del catalogo, la prenotazione dei prodotti e il ritiro in sede. Non sono previste spedizioni. Il sistema è pensato anche come strumento didattico e operativo per studenti e collaboratori dell’istituto.
 
@@ -9,16 +41,14 @@ Collaboratore: account creato dall’admin con permessi specifici: gestione prod
 Operatore Agrario: riceve gli ordini via email e gestisce fisicamente il ritiro e il pagamento in sede.
 
 3. Requisiti Funzionali
-Catalogo Prodotti
+ Catalogo Prodotti
 Visualizzazione a griglia/lista con ordinamento per: nuovi arrivi (default), prezzo, nome, disponibilità.
 Filtri per categoria (fiori, frutta, verdura, miele, erbe), stagione, disponibilità.
 Evidenza “Nuovi arrivi” con badge dedicato (scade dopo N giorni o rimozione manuale).
-
 Scheda Prodotto
 Nome, foto, descrizione, unità di vendita (pezzo/kg), prezzo, disponibilità residua.
 Indicazione se stagionale o in offerta.
 Pulsante “Aggiungi al carrello” con controllo stock.
-
 Carrello e Prenotazione
 Mini-carrello sempre visibile + pagina dedicata.
 Modifica quantità, rimozione prodotti, calcolo subtotali e totale.
@@ -26,34 +56,28 @@ Salvataggio automatico lato server ogni 2–3 minuti.
 Persistenza del carrello in caso di disconnessione.
 Prenotazione disponibile solo dopo login/registrazione.
 Blocco prenotazione in caso di quantità insufficiente (chi conferma per primo “vince”).
-
 Account Utente
 Registrazione con email, nome, cognome, password.
 Recupero password via email.
 Profilo utente con dati personali e note per ritiro.
 Storico ordini con stato: Inviato, Preso in carico, Pronto al ritiro, Ritirato, Annullato.
-
 Invio Ordine
 Riepilogo finale con conferma.
 Email automatica al cliente e all’operatore agrario.
 Messaggio informativo su ritiro e pagamento in sede (indirizzo, orari, sportello).
-
 Gestione Disponibilità
 Validazione stock in fase di aggiunta al carrello e conferma ordine.
 Messaggio chiaro in caso di quantità insufficiente e proposta alternativa.
-
 Area Amministratore
 CRUD prodotti: nome, descrizione, categoria, prezzo, unità, quantità, foto, flag “nuovo arrivo”.
 Gestione ordini: filtri per stato/data, modifica stato, invio email automatica (opzionale).
 Gestione categorie e stagionalità.
 Creazione/modifica/eliminazione collaboratori con assegnazione privilegi granulari.
-
 Collaboratore
 Accesso con credenziali fornite dall’admin.
 Funzionalità assegnate: gestione prodotti, quantità, categorie, offerte.
 Visualizzazione/modifica ordini (se autorizzato).
 Contrassegno pagamento e conferma ritiro.
-
 Comunicazioni
 Email conferma ordine al cliente + notifica all’agrario.
 Pagina contatti con mappa, orari, telefono, email.
@@ -81,8 +105,17 @@ Utilizzo di parole chiave in titoli, prodotti o paragrafi
 Determina la classifica con cui vengono mostrati i risultati di una ricerca
 Determina la classifica con cui vengono caricate, immagini, testi e titoli per non appesantire il caricamento delle pagine
 
-8. Evoluzioni Future
+8. Specifiche sui PLUGIN
+WooCommerce Payments: 
+Per pagare con la carta fisicamente bisogna avere il lettore di carte M2 di WooCommerce (link alla pagina: https://woocommerce.com/it/products/m2-card-reader/) oppure un pos che permetta l’integrazione con il plugin 
+Accetta Apple pay (google e samsung pay no)
+Il pagamento viene inviato sul conto corrente scelto ogni 2 giorni 
+
+9. Evoluzioni Future
 Attivazione recensioni con moderazione
 Pagamenti online
 Prenotazione fascia oraria ritiro
 Reportistica avanzata per produzione e stagionalità
+
+ 
+
