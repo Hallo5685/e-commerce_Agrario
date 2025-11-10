@@ -1,0 +1,21 @@
+﻿SITI Visitati:
+
+
+Istituto Agrario di San Michele all’Adige: https://www.fmach.it
+* solo descrizione prodotti niente vendita 
+* c’è il pulsante della disponibilità ma non funziona
+* vini e distillati + visita alla cantina
+* piattaforma di creazione del sito: OpenCity v2.1.12 (non puoi gestire un e-commerce)
+
+
+https://www.panierebio.com/categoria-prodotto/vendita-prodotti-agricoli-a-domicilio/
+   * vendita di frutta e verdura e prodotti biologici
+   * diviso per tipologia di prodotti e bla bla bla
+
+
+https://www.mezzaria.it/
+* Vende una quantità limitata di prodotti 
+* Design pulito
+* Assenza di versioni multilingua
+* Alcune pagine non esistono anche se dei pulsanti promettono il contrario
+* Alcuni pulsanti reindirizzano alla pagina sbagliata
