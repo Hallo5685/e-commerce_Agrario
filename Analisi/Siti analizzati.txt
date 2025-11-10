@@ -10,7 +10,9 @@ Istituto Agrario di San Michele all’Adige: https://www.fmach.it
 
 https://www.panierebio.com/categoria-prodotto/vendita-prodotti-agricoli-a-domicilio/
    * vendita di frutta e verdura e prodotti biologici
-   * diviso per tipologia di prodotti e bla bla bla
+   * diviso per tipologia di prodotti
+   * Buona navigazione 
+   * Sezione offerte e novità
 
 
 https://www.mezzaria.it/
@@ -18,4 +20,5 @@ https://www.mezzaria.it/
 * Design pulito
 * Assenza di versioni multilingua
 * Alcune pagine non esistono anche se dei pulsanti promettono il contrario
+
 * Alcuni pulsanti reindirizzano alla pagina sbagliata
