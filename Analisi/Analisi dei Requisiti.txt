@@ -1,101 +1,144 @@
-ANALISI dei REQUISITI         
+﻿ANALISI dei REQUISITI         
+
+
+PREMESSA
+Il sistema da sviluppare è un sistema di prenotazione online in cui il pagamento e il ritiro dei prodotti avviene esclusivamente in sede.
+Nel documento il termine “venduto” è da intendersi come prodotto prenotato/riservato, ed è utilizzato esclusivamente ai fini della gestione delle scorte.
+________________
+
 
 GESTIONE GENERALE 
-Sviluppare un sito web (lato frontend e backend) che permetta la vendita di fiori e prodotti  alimentari di stagione online.
-Si deve poter vedere il catalogo dei prodotti e poterli prenotare (o al pezzo o al kg).
-Ogni prodotto può essere selezionato per vederne le caratteristiche e sapere in che quantità è presente.
-Ogni volta che viene aggiunto un nuovo prodotto viene messo ai primi posti del catalogo con la scritta “nuovi arrivi”.
-Si può visualizzare tutto il sito come ospiti ma nel momento della prenotazione di un qualsiasi prodotto in qualsiasi quantità bisogna creare/accedere al proprio account.
-Per ogni account è presente un carrello
-Non sono possibili (per ora) le spedizioni dei prodotti, quindi pagamento e ritiro dell’ordine sono gestiti da un’operatore e il cliente stesso deve recarsi alla sede dell’agrario.
-Deve essere gestito un account amministratore che permette di caricare i prodotti con relative informazioni 
-(La gestione delle recensioni è da vedere)
-Il design del sito va fatto rispettando gli standard dei siti scolastici (quindi abbiamo già il modello da seguire)
+* Sviluppare un sito web (lato frontend e backend) che permetta la prenotazione online di fiori e prodotti alimentari di stagione.
+* Il sistema deve consentire la visualizzazione del catalogo prodotti e la prenotazione degli stessi (al pezzo o al kg).
+* Ogni prodotto deve avere una pagina dedicata con:
+   * descrizione
+   * prezzo
+   * quantità disponibile
+* Ogni volta che viene aggiunto un nuovo prodotto viene mostrato tra i primi risultati del catalogo con l'etichetta “nuovi arrivi”.
+* Il sito è interamente navigabile come ospite,ma per effettuare una prenotazione è obbligatorio registrarsi o accedere al proprio account.
+* Ogni account dispone di un carrello associato.
+* Non sono previste spedizioni: il ritiro e il pagamento dell’ordine avvengono esclusivamente presso la sede dell’agrario, con la gestione da parte di un operatore.
+* Deve essere presente almeno un account Amministratore per la gestione completa del sistema.
+* La gestione delle recensioni è un requisito opzionale e da valutare.
+* Il design del sito deve rispettare gli standard grafici dei siti scolastici, seguendo il modello fornito.
+________________
 
 
 GESTIONE UTENTE
-Registrazione
-Login
-Pagina del profilo con i dati utente (eventualmente modificabili)
-Storico degli ordini
-Recupero delle pw
-Possibilità di acquistare prodotti
+* Registrazione account
+* Login
+* Recupero password
+* Pagina del profilo con i dati personali dell’utente (modificabili)
+* Carrello associato all’account
+* Storico delle prenotazioni
+* Possibilità di prenotare prodotti
+
 
 GESTIONE AMMINISTRATORE (super utente)
-Inserimento/modifica/rimozione prodotto dal catalogo
-Inserimento/modifica/eliminazione account 
-Gestione categorie di prodotti e offerte
-Gestione ordini (non so bene come)
-Gestione storico ordini
-diviso per pagati e non
-ricerca per mail di un ordine specifico.
-Creazione degli altri utenti di tipologia collaboratore
-Può modificare le caratteristiche degli account collaboratore rendendoli in grado di aggiungere prodotti al catalogo, aumentarne la quantità e gestire le vendite. (in futuro, forse, anche il customer service)
-Può eliminare gli account collaboratore in qualsiasi momento 
+L’Amministratore ha accesso completo al sistema e può:
+* Inserire, modificare e rimuovere prodotti dal catalogo
+* Inserire, modificare ed eliminare account utente
+* Gestire categorie di prodotti e offerte
+* Gestire tutte le prenotazioni
+   * Gestire lo storico delle prenotazioni diviso per ritirate e non ritirate
+   * Ricercare una prenotazione tramite email dell’utente
+* Creare account di tipologia Collaboratore
+   * Assegnare e modificare i permessi dei Collaboratori: 
+      * aggiungere prodotti al catalogo
+      * aumentare la quantità di un prodotto
+      * gestire le prenotazioni (in futuro, forse, anche il customer service)
+   * Eliminare gli account Collaboratore in qualsiasi momento
+
+
 
 
 GESTIONE COLLABORATORE
-Le sue capacità operative dipendono dal ruolo che gli ha affidato l’amministratore
-Gestione categorie di prodotti e offerte
-Gestione ordini (non si sa ancora come con precisione)
-Gestione storico ordini
-diviso per pagati e non
-ricerca per mail di un ordine specifico.
-Privilegi Collaboratore
-inserimento quantità nei prodotti
-creazione/eliminazione/modifica di un prodotto
-gestione storico ordine (visualizzazione e conferma di avvenuto ritiro o meno)
+Le funzionalità del Collaboratore dipendono dai permessi assegnati dall’Amministratore. 
+Il Collaboratore può, se autorizzato:
+
+
+* Gestire categorie di prodotti e offerte
+* Gestire le prenotazioni
+* Visualizzare lo storico delle prenotazioni diviso per ritirate e non ritirate
+* Ricercare una prenotazione tramite email dell’utente
+* Inserire o aggiornare le quantità dei prodotti
+* Creare, modificare ed eliminare prodotti dal catalogo
+* Confermare l’avvenuto ritiro di una prenotazione
+Il Collaboratore non può creare o eliminare account Amministratore né modificare i permessi globali del sistema.
+
 
 GESTIONE CARRELLO 
-Gestione dei prodotti inseriti (eliminazione, modifica quantità)
-Calcolo del prezzo totale
-(salvataggio ogni 2-3 min su DB tramite SQL)
-In caso di disconnessione con carrello pieno, si salvano i dati 
+Il carrello consente:
+* Inserimento dei prodotti
+* Eliminazione dei prodotti
+* Modifica delle quantità
+* Calcolo automatico del prezzo totale
+Il carrello deve essere salvato automaticamente per evitare la perdita dei dati. 
+In caso di disconnessione dell’utente con carrello non vuoto, i dati vengono mantenuti e ripristinati al successivo accesso.
+
+
+GESTIONE PRENOTAZIONI E STATI 
+Ogni prenotazione deve avere uno stato definito. 
+Gli stati possibili sono:
+* Prenotata
+* Confermata
+* Pronta al ritiro
+* Ritirata
+* Annullata
+Il passaggio tra gli stati può avvenire:
+* automaticamente dal sistema
+* manualmente da Amministratore o Collaboratore autorizzato
+
 
 GESTIONE CONFERMA PRENOTAZIONE
-Gestione data di ritiro/prenotazione
-Gestione inserimento dati utente (nome cognome e mail) 
-Gestione invio mail:
-di conferma dell’ordine all’utente
-con i dati dell’ordine all’amministratore
-Se un prodotto è nel carrello di due persone e sono gli ultimi pezzi, il primo che conferma la prenotazione ‘vince’ e compra
-Pagamento e ritiro avvenuti
-l’account amministratore/collaboratore contrassegna i pagamenti sugli ordini
-Tempo di 48h per disdire la prenotazione 
-in caso di ritiro non avvenuto, i gestori si occupano della disdetta
+Durante la conferma della prenotazione il sistema gestisce:
+* Selezione della data di ritiro
+* Inserimento dei dati dell’utente (nome, cognome, email)
+* Gestione invio email:
+   * Invio automatico di una email di conferma all’utente
+   * Invio automatico dei dati della prenotazione all’Amministratore
+* In caso di prenotazioni concorrenti sugli ultimi pezzi disponibili, la quantità viene assegnata al primo utente che conferma la prenotazione
+* Il pagamento e il ritiro vengono contrassegnati manualmente da Amministratore o Collaboratore
+* L’utente ha 48 ore di tempo per disdire la prenotazione
+* In caso di ritiro non avvenuto, la prenotazione viene annullata dagli operatori
+
+
+GESTIONE SCORTE 
+La gestione delle scorte prevede che:
+* La quantità di un prodotto venga considerata impegnata solo alla conferma della prenotazione
+* Il sistema gestisca correttamente prenotazioni concorrenti
+* In caso di annullamento o mancato ritiro la quantità torni disponibile
+
 
 GESTIONE PRODOTTI 
-Disponibilità dei prodotti
-Contatore con quantità disponibile
-Pagine con informazioni specifiche 
-Gestione offerte e nuovi arrivi dei prodotti
-Gestione sezioni dei prodotti (es. miele, verdure, fiori, frutta, …)
-pagina con tutti i prodotti e barra delle categorie
-categorie offerte e novità
-Ricerca prodotti sia tramite filtri che tramite nome del prodotto
-Se un prodotto è stagionale, finita la vendita e produzione viene tolta la visualizzazione sul sito 
-Si possono fare più restock per stagione
-Prodotti esauriti 
-segnalazione esaurimento ma si continua a visualizzare la pagina con i dettagli del prodotto (si blocca solo il tasto della prenotazione)
+* Visualizzazione della disponibilità dei prodotti
+* Contatore della quantità disponibile
+* Pagine con informazioni specifiche del prodotto
+* Gestione offerte e nuovi arrivi
+* Gestione categorie (es. miele, verdure, fiori, frutta)
+   * Pagina con elenco completo dei prodotti e barra delle categorie
+   * Sezioni dedicate a offerte e novità
+* Ricerca prodotti tramite nome o filtri
+* I prodotti stagionali, una volta terminata la stagione di produzione, vengono rimossi dalla visualizzazione del catalogo
+   * È possibile effettuare più restock per stagione
+* I prodotti esauriti restano visibili nel catalogo, ma il pulsante di prenotazione viene disabilitato
+
+
+________________
 
 
 Domande x Agrario 
 
-Categorie di prodotti (anche a grandi linee per farci un’idea) 
-Quantità 
-c’è una quantità massima di prodotti acquistabili?
-Ritiro prodotti
-Tempo Limite 
-optare per inserire una data di ritiro
-data precisa
-range di max 3 giorni in cui si andranno a ritirare i prodotti 
-Nuovo arrivo 
-dipende dalla scadenza 
-ci sono un tot di giorni predefiniti in cui può stare nei nuovi arrivi (uguale per tutti)
-Metodi di pagamento e ritiro merci: 
-Ritiro e pagamento fisico all’agrario (o all’indirizzo specificato)
-Pagamento anche o solo online, e poi si ritira l’ordine all’agrario (o all’indirizzo specificato)
-Optare per la gestione del supporto clienti (che eventualmente diventerebbe anche una delle mansioni dei collaboratori)
-     
 
-
+* Categorie di prodotti (anche a grandi linee per farci un’idea) 
+* Quantità 
+   * c’è una quantità massima di prodotti prenotabili?
+* Ritiro prodotti
+   * Tempo Limite 
+   * optare per inserire una data di ritiro
+      * data precisa
+      * range di max 3 giorni in cui si andranno a ritirare i prodotti 
+* Nuovo arrivo 
+   * dipende dalla scadenza 
+   * ci sono un tot di giorni predefiniti in cui può stare nei nuovi arrivi (uguale per tutti)
+* Optare per la gestione del supporto clienti (che eventualmente diventerebbe anche una delle mansioni dei collaboratori)
