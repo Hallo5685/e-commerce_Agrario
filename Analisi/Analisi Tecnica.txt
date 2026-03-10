@@ -18,6 +18,8 @@ Tecnologie: WordPress + Elementor (versione gratuita) + WooCommerce
 * User Role Editor – gestione ruoli avanzati
 * Rank Math / Yoast SEO (free) – ottimizzazione SEO
 * Email Log – tracciamento email inviate
+* Gestore dei file meganer - Gestore di file WP
+
 3. STRUTTURA DEI CONTENUTI
 3.1 PRODOTTI
 * Tipologia: prodotto semplice (venduto al pezzo o al kg)
@@ -122,4 +124,5 @@ GESTIONE STATI E CICLO DI VITA DELL’ORDINE
             * Tutte le personalizzazioni saranno documentate nel child theme
             * Il sito sarà testato su Chrome, Firefox, Edge, Safari
             * Ottimizzazione mobile garantita da Elementor
+
             * Backup automatici settimanali configurati tramite UpdraftPlus (free)
