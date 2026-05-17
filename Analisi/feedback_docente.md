@@ -78,3 +78,22 @@ Nell’Analisi Tecnica è opportuno descrivere come gli stati della prenotazione
 ### Sicurezza, validazioni e gestione degli errori
 
 Nell’Analisi Tecnica è opportuno indicare le principali misure di sicurezza e validazione adottate (autenticazione degli utenti, controllo degli accessi per ruolo, validazione dei dati inseriti) e come il sistema gestisce eventuali errori o situazioni anomale.
+
+# Feedback Project Plan e Gantt
+
+Il Project Plan mostra un miglioramento rispetto alla versione precedente e riflette meglio il lavoro effettivamente svolto dal gruppo. Sono presenti obiettivi, attività e un aggiornamento sullo stato del progetto, elementi che indicano un tentativo di pianificare e monitorare lo sviluppo nel tempo.
+
+Tuttavia il documento mantiene ancora una struttura troppo narrativa. In diversi punti assomiglia più a una raccolta di appunti o a un diario di lavoro del gruppo che a un vero piano di gestione del progetto. Per rendere il Project Plan più chiaro e leggibile sarebbe opportuno organizzarlo in sezioni più distinte e riconoscibili.
+
+In particolare dovrebbe emergere in modo più netto la separazione tra:
+- obiettivi del progetto;
+- attività da svolgere;
+- milestone principali;
+- organizzazione e gestione del lavoro;
+- controllo dello stato di avanzamento.
+
+Attualmente questi elementi sono presenti ma spesso risultano mescolati tra loro all’interno delle stesse parti del documento, rendendo meno immediata la comprensione della struttura del progetto.
+
+Un ulteriore aspetto che può essere migliorato riguarda l’attenzione ai possibili rischi o criticità durante lo sviluppo (ad esempio ritardi nelle attività, dipendenze da informazioni esterne o problemi tecnici). Anche una breve sezione che identifichi i principali rischi e come il gruppo intende affrontarli contribuirebbe a rendere il Project Plan più completo e più vicino a un vero documento di pianificazione.
+
+Nel complesso il documento mostra un buon passo avanti rispetto alla versione iniziale, ma può essere ulteriormente migliorato rendendo la struttura più ordinata e distinguendo con maggiore chiarezza le diverse componenti della pianificazione del progetto.
