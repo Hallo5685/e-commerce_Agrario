@@ -97,3 +97,18 @@ Attualmente questi elementi sono presenti ma spesso risultano mescolati tra loro
 Un ulteriore aspetto che può essere migliorato riguarda l’attenzione ai possibili rischi o criticità durante lo sviluppo (ad esempio ritardi nelle attività, dipendenze da informazioni esterne o problemi tecnici). Anche una breve sezione che identifichi i principali rischi e come il gruppo intende affrontarli contribuirebbe a rendere il Project Plan più completo e più vicino a un vero documento di pianificazione.
 
 Nel complesso il documento mostra un buon passo avanti rispetto alla versione iniziale, ma può essere ulteriormente migliorato rendendo la struttura più ordinata e distinguendo con maggiore chiarezza le diverse componenti della pianificazione del progetto.
+
+# Valutazione Finale del Progetto
+
+Il progetto risulta complessivamente ben realizzato e coerente con gli obiettivi definiti nelle fasi iniziali di analisi e progettazione. Nel corso dello sviluppo il gruppo ha recepito buona parte dei feedback forniti dal docente, migliorando progressivamente sia la documentazione sia l’organizzazione generale del lavoro.
+
+L’Analisi dei Requisiti, l’Analisi Funzionale e l’Analisi Tecnica risultano oggi più strutturate e maggiormente coerenti tra loro rispetto alle versioni iniziali. In particolare sono stati chiariti aspetti importanti relativi alla gestione delle prenotazioni, degli stati degli ordini, delle scorte e dei ruoli utente. L’Analisi Tecnica rappresenta la parte più solida della documentazione, mostrando una buona comprensione delle tecnologie utilizzate e delle logiche di funzionamento del sistema.
+
+Il progetto è stato concretamente sviluppato e presenta un e-commerce funzionante, con implementazione reale delle principali funzionalità previste: gestione catalogo, carrello, prenotazioni, ruoli utente e organizzazione generale del flusso operativo. La documentazione risulta inoltre generalmente coerente con quanto effettivamente realizzato nel repository e nel progetto applicativo.
+
+Permangono alcuni aspetti migliorabili dal punto di vista metodologico e organizzativo, in particolare:
+- una struttura del Project Plan ancora troppo narrativa;
+- una separazione non sempre netta tra obiettivi, attività, milestone e gestione del progetto;
+- una formalizzazione progettuale ancora migliorabile in alcune sezioni tecniche.
+
+Tuttavia tali criticità non compromettono la qualità complessiva del lavoro svolto, che dimostra una buona capacità realizzativa, un miglioramento progressivo nel corso delle milestone e una concreta comprensione delle problematiche affrontate durante lo sviluppo.
